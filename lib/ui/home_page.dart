@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
         context, DetailPage.routeName);
   }
 
-  ///menutup stream
+  ///setelah melakukan configure notifikasi maka stream harus ditutup.
   @override
   void dispose() {
     selectNotificationSubject.close();

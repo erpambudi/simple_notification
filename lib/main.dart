@@ -19,11 +19,13 @@ Future<void> main() async {
   ///proses request permission IOS
   _notificationHelper.requestIOSPermissions(flutterLocalNotificationsPlugin);
 
-  runApp(MaterialApp(
-    initialRoute: HomePage.routeName,
-    routes: {
-      HomePage.routeName: (context) => HomePage(),
-      DetailPage.routeName: (context) => DetailPage(),
-    },
-  ));
+  runApp(
+    MaterialApp(
+      initialRoute: HomePage.routeName,
+      routes: {
+        HomePage.routeName: (context) => HomePage(),
+        DetailPage.routeName: (context) => DetailPage(),
+      },
+    ),
+  );
 }

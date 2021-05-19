@@ -1,11 +1,12 @@
 import 'dart:io';
 import 'dart:typed_data';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rxdart/subjects.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:rxdart/subjects.dart';
 import 'package:simple_notification/utils/received_notification.dart';
 
 ///STREAM ITEM NOTIFICATION
@@ -28,6 +29,11 @@ class NotificationHelper {
     _instance = this;
   }
 
+  ///untuk mengembalikan instance dari kelas NotificationHelper dengan menggunakan konsep singleton.
+  ///Di dalam fungsi factory kita melakukan pengecekan.
+  ///Jika kita belum membuat sebuah objek (instance bernilai null),
+  ///maka fungsi ini akan mengembalikan instance objek NotificationHelper._internal().
+  ///Tetapi jika sudah, kita tidak akan membuatnya lagi dan akan langsung mengembalikan instance sebelumnya.
   factory NotificationHelper() => _instance ?? NotificationHelper._internal();
 
   ///INITIALIZE NOTIFICATION
